@@ -20,13 +20,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "@swc/core": "^1.7.23",
-    "@types/node": "^20.16.5",
-    "husky": "^8.0.3",
-    "is-ci": "^3.0.1",
+    "@biomejs/biome": "2.4.5",
+    "@swc/core": "^1.15.18",
+    "@types/node": "^25.3.3",
+    "husky": "^9.1.7",
+    "is-ci": "^4.1.0",
     "is-git-dirty": "^2.0.2",
-    "tsup": "^8.2.4",
-    "typescript": "^5.5.4"
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
   }
 }

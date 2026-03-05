@@ -1,7 +1,14 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-	"organizeImports": {
-		"enabled": true
+	"$schema": "https://biomejs.dev/schemas/2.4.5/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": {
+					"level": "on",
+					"options": {}
+				}
+			}
+		}
 	},
 	"linter": {
 		"enabled": true,
@@ -29,14 +36,6 @@
 				"noDangerouslySetInnerHtml": "error",
 				"noDangerouslySetInnerHtmlWithChildren": "error"
 			},
-			"nursery": {
-				"noDuplicateAtImportRules": "error",
-				"noDuplicateJsonKeys": "error",
-				"noEmptyBlock": "error",
-				"noExportedImports": "error",
-				"useTopLevelRegex": "error",
-				"noLabelWithoutControl": "error"
-			},
 			"suspicious": {
 				"noCatchAssign": "error",
 				"noConfusingLabels": "error",
@@ -55,7 +54,6 @@
 				"noImplicitBoolean": "error",
 				"noNonNullAssertion": "error",
 				"noParameterAssign": "error",
-				"noVar": "error",
 				"useAsConstAssertion": "error",
 				"useBlockStatements": "error",
 				"useConst": "error",
