@@ -1,8 +1,9 @@
-import assert from 'node:assert';
-import isGitDirty from 'is-git-dirty';
+import { execSync } from 'node:child_process';
 
-const isDirty = isGitDirty();
-
-assert.notEqual(isDirty, null);
-assert.notEqual(isDirty, false);
-assert.ok(isDirty);
+// Fail if lint auto-fixed tracked files in src/ that weren't re-staged
+try {
+	execSync('git diff --quiet -- src/', { stdio: 'pipe' });
+} catch {
+	process.stderr.write('Unstaged changes in src/ after linting — stage the lint fixes and retry.\n');
+	process.exit(1);
+}

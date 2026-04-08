@@ -3,13 +3,16 @@
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
         "target": "ESNext",
-        "module": "ESNext",
+        "module": "NodeNext",
+        "strict": true,
         "strictNullChecks": true,
         "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noUncheckedIndexedAccess": true,
+        "isolatedModules": true,
         "skipLibCheck": true,
         "outDir": "dist",
         "baseUrl": ".",
-        "noImplicitReturns": true,
         "paths": {
             "@/*": ["./src/*"]
         },

@@ -4,12 +4,23 @@
   "description": "project description here",
   "main": "./dist/index.js",
   "scripts": {
-    "prepare": "node preinstall.js --max-old-space-size=10M",
+    "prepare": "node preinstall.js",
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
     "lint": "biome lint --write ./src",
     "format": "biome format --write ./src",
-    "build": "tsup",
-    "hook": "node hook.js --max-old-space-size=50M"
+    "check": "biome check --write ./src",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "hook": "node hook.js"
   },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  },
+  "packageManager": "pnpm@10.27.0",
   "type": "module",
   "keywords": [
     "project keywords"
@@ -25,8 +36,8 @@
     "@types/node": "^25.3.3",
     "husky": "^9.1.7",
     "is-ci": "^4.1.0",
-    "is-git-dirty": "^2.0.2",
     "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.3"
   }
 }

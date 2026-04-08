@@ -6,7 +6,7 @@ export default defineConfig({
   bundle: true,
   minifyWhitespace: true,
   minifyIdentifiers: true,
-  target: ['node16', 'node18'],
+  target: ['node18', 'node20'],
   platform: 'node',
   dts: false,
   tsconfig: './tsconfig.json',
