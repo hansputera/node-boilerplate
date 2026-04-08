@@ -17,7 +17,7 @@
     "hook": "node hook.js"
   },
   "engines": {
-    "node": ">=18",
+    "node": ">=20",
     "pnpm": ">=9"
   },
   "packageManager": "pnpm@10.27.0",
