@@ -1,1 +1,3 @@
-process.stdout.write('Hello World!\n');
+export function greet(name: string): string {
+	return `Hello, ${name}!`;
+}

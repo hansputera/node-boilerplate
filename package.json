@@ -1,43 +1,53 @@
 {
-  "name": "project-name-here",
-  "version": "0.0.1",
-  "description": "project description here",
-  "main": "./dist/index.js",
-  "scripts": {
-    "prepare": "node preinstall.js",
-    "dev": "tsup --watch",
-    "build": "tsup",
-    "start": "node dist/index.js",
-    "typecheck": "tsc --noEmit",
-    "lint": "biome lint --write ./src",
-    "format": "biome format --write ./src",
-    "check": "biome check --write ./src",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "hook": "node hook.js"
-  },
-  "engines": {
-    "node": ">=20",
-    "pnpm": ">=9"
-  },
-  "packageManager": "pnpm@10.27.0",
-  "type": "module",
-  "keywords": [
-    "project keywords"
-  ],
-  "author": {
-    "name": "Hanif Dwy Putra S",
-    "email": "hanifdwyputrasembiring@gmail.com"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@biomejs/biome": "2.4.5",
-    "@swc/core": "^1.15.33",
-    "@types/node": "^25.6.2",
-    "husky": "^9.1.7",
-    "is-ci": "^4.1.0",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3",
-    "vitest": "^4.1.5"
-  }
+	"name": "project-name-here",
+	"version": "0.0.1",
+	"description": "project description here",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"files": ["dist"],
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"prepare": "node preinstall.js",
+		"dev": "tsup --watch",
+		"build": "tsup",
+		"build:lib": "BUILD_MODE=lib tsup",
+		"build:app": "BUILD_MODE=app tsup",
+		"start": "node dist/main.js",
+		"typecheck": "tsc --noEmit",
+		"lint": "biome lint --write ./src",
+		"format": "biome format --write ./src",
+		"check": "biome check --write ./src",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"hook": "node hook.js"
+	},
+	"engines": {
+		"node": ">=20",
+		"pnpm": ">=9"
+	},
+	"packageManager": "pnpm@10.27.0",
+	"keywords": ["project keywords"],
+	"author": {
+		"name": "Hanif Dwy Putra S",
+		"email": "hanifdwyputrasembiring@gmail.com"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@biomejs/biome": "2.4.5",
+		"@swc/core": "^1.15.33",
+		"@types/node": "^25.6.2",
+		"husky": "^9.1.7",
+		"is-ci": "^4.1.0",
+		"tsup": "^8.5.1",
+		"typescript": "^5.9.3",
+		"vitest": "^4.1.5"
+	}
 }

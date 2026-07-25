@@ -5,12 +5,13 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile
 
-# Stage 2: Build
+# Stage 2: Build (app mode)
 FROM node:20-alpine AS build
 RUN corepack enable
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+ENV BUILD_MODE=app
 RUN pnpm build
 
 # Stage 3: Runtime
@@ -20,4 +21,5 @@ COPY --from=build /app/dist ./dist
 COPY --from=build /app/package.json ./
 ENV NODE_ENV=production
 USER node
-CMD ["node", "dist/index.js"]
+HEALTHCHECK NONE
+CMD ["node", "dist/main.js"]
