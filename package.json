@@ -11,7 +11,9 @@
 			"require": "./dist/index.cjs"
 		}
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"sideEffects": false,
 	"type": "module",
 	"scripts": {
@@ -34,20 +36,23 @@
 		"pnpm": ">=9"
 	},
 	"packageManager": "pnpm@10.27.0",
-	"keywords": ["project keywords"],
+	"keywords": [
+		"project keywords"
+	],
 	"author": {
 		"name": "Hanif Dwy Putra S",
 		"email": "hanifdwyputrasembiring@gmail.com"
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"@biomejs/biome": "2.4.5",
-		"@swc/core": "^1.15.33",
-		"@types/node": "^25.6.2",
+		"@biomejs/biome": "2.5.5",
+		"@swc/core": "^1.15.46",
+		"@types/node": "^26.1.1",
 		"husky": "^9.1.7",
 		"is-ci": "^4.1.0",
 		"tsup": "^8.5.1",
 		"typescript": "^5.9.3",
-		"vitest": "^4.1.5"
+		"vite": "^8.0.16",
+		"vitest": "^4.1.10"
 	}
 }
