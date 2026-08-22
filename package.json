@@ -46,7 +46,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@biomejs/biome": "2.5.5",
-		"@swc/core": "^1.15.46",
+		"@swc/core": "^1.16.1",
 		"@types/node": "^26.1.1",
 		"husky": "^9.1.7",
 		"is-ci": "^4.1.0",
