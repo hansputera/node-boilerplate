@@ -1,0 +1,27 @@
+# SOPS Configuration
+# https://getsops.io/docs/usage/identities/config-file/
+#
+# To generate a new age key pair:
+#   mkdir -p ~/.config/sops/age
+#   age-keygen -o ~/.config/sops/age/keys.txt
+
+creation_rules:
+  # Development environment - uses local age key
+  - path_regex: \.env\.dev\.encrypted$
+    age: >-
+      age1tgnlf7c9uqmp6z8a4gf4djn5xjjhhtkclehmlee2z8thrp6pee7qup93l2
+
+  # Staging environment - uses staging age key
+  - path_regex: \.env\.staging\.encrypted$
+    age: >-
+      age1tgnlf7c9uqmp6z8a4gf4djn5xjjhhtkclehmlee2z8thrp6pee7qup93l2
+
+  # Production environment - uses production age key
+  - path_regex: \.env\.prod\.encrypted$
+    age: >-
+      age1tgnlf7c9uqmp6z8a4gf4djn5xjjhhtkclehmlee2z8thrp6pee7qup93l2
+
+  # Default - catch-all for any other encrypted .env files
+  - path_regex: \.encrypted$
+    age: >-
+      age1tgnlf7c9uqmp6z8a4gf4djn5xjjhhtkclehmlee2z8thrp6pee7qup93l2
