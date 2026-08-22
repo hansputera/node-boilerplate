@@ -1,8 +1,14 @@
 node_modules/
 dist/
 
+# Environment files
 .env
-.env*.local
+.env.*
+!.env.example
+!.env.*.encrypted
+
+# SOPS
+.sops/age/keys.txt
 
 *.log
 .DS_Store
