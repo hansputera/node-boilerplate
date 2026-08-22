@@ -1,13 +1,57 @@
-node_modules
-dist
+# Version control
 .git
 .gitignore
 .github
-.husky
+.gitattributes
+
+# Dependencies
+node_modules
+
+# Build output
+dist
+coverage
+
+# Environment files (NEVER include in image)
+.env
+.env.*
+!.env.example
+
+# SOPS keys (NEVER include in image)
+.sops
+*.key
+*.pem
+
+# IDE and editor files
 .vscode
 .idea
-*.md
-*.log
-.env*
-coverage
+*.swp
+*.swo
+*~
+
+# OS files
 .DS_Store
+Thumbs.db
+
+# Documentation
+*.md
+LICENSE
+
+# Tests
+*.test.ts
+*.spec.ts
+__tests__
+
+# Docker files
+Dockerfile
+docker-compose*.yaml
+
+# Kubernetes manifests (deploy separately)
+k8s
+
+# CI/CD
+.husky
+hook.js
+
+# Misc
+.cache
+*.log
